@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserLog;
 use App\Models\Enroll;
 use App\Models\SchoolYear;
 use App\Models\Section;
@@ -85,6 +86,7 @@ class AdminController extends Controller
             $user->update($request->all());
         }
         
+        event(new UserLog("Updated user with ID#$user->id"));   
     
         return redirect()->route('admin.users')->with('Message', "User [ID #$request->id] has been successfully updated.");
     }

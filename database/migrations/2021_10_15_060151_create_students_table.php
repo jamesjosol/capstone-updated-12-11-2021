@@ -36,7 +36,7 @@ class CreateStudentsTable extends Migration
             $table->string('barangay');
             $table->string('town');
             $table->string('province');
-            $table->string('grade_LVL');
+            $table->string('grade_LVL')->nullable();
             $table->string('elemSchool');
             $table->string('elemSchlAddr');
             $table->string('elemYrAttnd');

@@ -5,7 +5,11 @@
                 Account Profile
             </div>
         </div>
-        <i class='bx bx-menu' id="btn-menu"></i>
+        {{-- <i class='bx bx-menu' id="btn-menu"></i> --}}
+        <div id="btn-menu" class="mt-2">
+            <i class='bx bx-menu fa-hover-hidden'></i>
+            <i class='bx bx-x fa-hover-show' style="display: none"></i>
+        </div>
     </div>
 
     <ul class="nav-list">

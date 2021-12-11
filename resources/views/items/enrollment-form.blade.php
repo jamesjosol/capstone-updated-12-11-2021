@@ -65,12 +65,12 @@
                     <div class="col-md-5">
                         <div class="mb-3 form-group @error('title') has-error @enderror">
                             {!! Form::label('title', 'Title',[],false) !!}
-                            {!! Form::text('title', $enrollment->title ?? '', ['class'=>'form-control']) !!}
+                            {!! Form::text('title', $enrollment->title ?? '', ['class'=>($errors->has('title') ? 'form-control is-invalid' : 'form-control')]) !!}
                             <span class="errspan docErr" id="errspan">{{ $errors->first('title') }}</span>
                         </div>
                         <div class="mb-3 form-group @error('remarks') has-error @enderror">
                             {!! Form::label('remarks', 'Remarks',[],false) !!}
-                            {!! Form::text('remarks', $enrollment->remarks ?? '', ['class'=>'form-control']) !!}
+                            {!! Form::text('remarks', $enrollment->remarks ?? '', ['class'=>($errors->has('remarks') ? 'form-control is-invalid' : 'form-control')]) !!}
                             <span class="errspan docErr" id="errspan">{{ $errors->first('remarks') }}</span>
                         </div>
 
@@ -93,8 +93,8 @@
                                 <div class="input-group control-group increment mt-2 @error('requiredFile') has-error @enderror @error('requiredFile.*') has-error @enderror" >
                                     <input type="file" name="requiredFile[]" value="" multiple class="form-control" accept="image/png, image/svg, image/jpeg, image/jpg">
                                 </div>
-                                <span class="errspan errimgfie" id="errspan">{{ $errors->first('requiredFile') }}</span>
-                                <span class="errspan errimgfie" id="errspan">{{ $errors->first('requiredFile.*') }}</span>
+                                <span class="errspan errimgfile" id="errspan">{{ $errors->first('requiredFile') }}</span>
+                                <span class="errspan errimgfile" id="errspan">{{ $errors->first('requiredFile.*') }}</span>
                             @endif
                             
                     </div>

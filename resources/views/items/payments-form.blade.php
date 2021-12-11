@@ -20,19 +20,17 @@
                     <div class="row">
                         <div class="mb-3 form-group @error('entrance_amount') has-error @enderror">
                             {!! Form::label('entrance_amount', 'Amount Paid',[],false) !!}
-                            {!! Form::number('entrance_amount', $enrollment->entrance_amount ?? '', ['class'=>'form-control','required' => '']) !!}
+                            {!! Form::number('entrance_amount', $enrollment->entrance_amount ?? '', ['class'=>($errors->has('entrance_amount') ? 'form-control is-invalid' : 'form-control'),'required' => '']) !!}
                             <span class="errspan" id="errspan">{{ $errors->first('entrance_amount') }}</span>  
                         </div>
                     </div>
                     @if (!isset($enrollment->payment_image))
                     <div class="uploadPhoto">
-                        {{-- <div class="input-group control-group increment mt-2" >
-                            <input type="file" name="requiredFile[]" value="" multiple class="form-control" accept="image/png, image/svg, image/jpeg, image/jpg">
-                        </div>
-                        <span class="errspan errimgfie" id="errspan">{{ $errors->first('requiredFile') }}</span>
-                        <span class="errspan errimgfie" id="errspan">{{ $errors->first('requiredFile.*') }}</span> --}}
                         <label for="payment_image">Payment Image</label>
-                        <input type="file" name="payment_image" id="fileupload" accept="image/png, image/svg, image/jpeg, image/jpg" class="form-control">
+                        <div class="input-group control-group increment mt-2 @error('payment_image') has-error @enderror" >
+                            <input type="file" name="payment_image" id="fileupload" accept="image/png, image/svg, image/jpeg, image/jpg" class="form-control">
+                        </div>
+                        <span class="errspan errimgfile" id="errspan">{{ $errors->first('payment_image') }}</span>
                     </div>
                     @endif
                     @if (isset($enrollment->payment_image))

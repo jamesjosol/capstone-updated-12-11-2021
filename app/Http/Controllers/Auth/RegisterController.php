@@ -97,7 +97,7 @@ class RegisterController extends Controller
             $mail->to($user->email);
             $mail->subject('Account Verification');
             $mail->from('salusenrollmentsystem@gmail.com', 'Salus Enrollment System');
-        });   
+        }); 
         
         return $user;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserLog;
 use App\Models\Enroll;
 use App\Models\SchoolYear;
 use App\Models\Student;
@@ -53,7 +54,6 @@ class UserController extends Controller
             'barangay'             => 'required|string',
             'town'             => 'required|string',
             'province'             => 'required|string',
-            'grade_LVL'          => 'required|string',
             'elemSchool'             => 'required|string',
             'elemSchlAddr'             => 'required|string',
             'elemYrAttnd'             => 'required|string',
@@ -103,6 +103,8 @@ class UserController extends Controller
             'secondarySchlAddr'        => $request->secondarySchlAddr,
             'secondaryYrAttnd'        => $request->secondaryYrAttnd,
         ]);
+
+        event(new UserLog("Filled up personal info form with ID#$student->id"));   
 
         return redirect()->route('user.dashboard');
     }

@@ -56,6 +56,9 @@ class User extends Authenticatable
         return auth()->user()->role == 1;
     }
 
+    public function logs() {
+        return $this->hasMany('App\Models\Log');
+    }
 
     public static function usersNotStudent() {
         $users = User::doesntHave('student')->where('role', '2')->orderBy('lastName')->get();

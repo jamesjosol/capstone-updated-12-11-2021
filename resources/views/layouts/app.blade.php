@@ -78,6 +78,13 @@
                 $(this).parent().find('span.errspanicon').remove()
             });
 
+            $('.input-group input').click(function(e) {
+                $(this).parent().removeClass('has-error');
+                $(this).parent().find('input.is-invalid').removeClass('is-invalid');
+                $(this).parent().find('span.errspan').remove()
+                $(this).parent().find('span.errspanicon').remove()
+            });
+
             $('.form-group input').focus(function(e) {
                 $(this).parent().removeClass('has-error');
                 $(this).parent().find('input.is-invalid').removeClass('is-invalid');

@@ -15,6 +15,18 @@
                         <div class="row">
                             <div class="col-md-10 offset-md-1 mt-4">
                                 <h1 class="mb-5">Personal Information</h1>
+                                @if(session('errors'))
+        <div class="alert alert-warning mt-5" role="alert">
+            <div class="container">
+                Please input the following fields:
+                <ul>
+                    @foreach(session('errors')->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
                                 {!! Form::open(["route" => "user.personalinfo", 'method' => 'post', 'id' => 'personalinfo-form', 'enctype'=>"multipart/form-data"]) !!}
                                 @include('items.user-personal-info-form')
                                 {!! Form::close() !!}

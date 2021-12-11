@@ -12,12 +12,7 @@
                         <div class="col-md-12 mt-2">
                             <div class="mb-3 form-group @error('section_id') has-error @enderror">
                                 {!! Form::label('section_id','Section',[],false) !!}
-                                {{Form::select('section_id', [
-                                    'Room 1' => 'Room 1',
-                                    'Room 2' => 'Room 2',
-                                    'Room 3' => 'Room 3',
-                                    'Room 4' => 'Room 4',
-                                ], null, ['class'=>'form-control form-select', 'id'=>'modal-input-section'])}}
+                                {{Form::select('section_id', \App\Models\Section::list(), null, ['class'=>'form-control form-select', 'id'=>'modal-input-section'])}}
                                 <span class="errspan" id="errspan">{{ $errors->first('section_id') }}</span>
                             </div>
                         </div>

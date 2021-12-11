@@ -22,4 +22,13 @@ class Section extends Model
     public function enrolls() {
         return $this->hasMany('App\Models\Enroll');
     }
+
+    public static function list() {
+        $sections = Section::all();
+        $list = [];
+        foreach($sections as $s) {
+            $list[$s->id] = 'Name: ' . $s->name . '  | Room: ' . $s->room . ' | Adviser: ' . $s->teacher->firstName . ' ' . $s->teacher->lastName;
+        }
+        return $list;
+    }
 }

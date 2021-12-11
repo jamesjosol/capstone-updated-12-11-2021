@@ -22,13 +22,4 @@ class Session extends Model
     public function classenrolls() {
         return $this->hasMany('App\Models\ClassEnroll');
     }
-
-    // public static function list() {
-    //     $classes = Session::all();
-    //     $list = [];
-    //     foreach($classes as $c) {
-    //         $list[$c->id] = $c->lastName . ", " . $c->firstName;
-    //     }
-    //     return $list;
-    // }
 }

@@ -1,0 +1,74 @@
+#user-card {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#user-card #user-card-header {
+    height: 50px;
+}
+
+#user-card-header .btn {
+    align-items: center;
+}
+
+#user-card #user-card-body .title {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(181, 251, 228);
+    border-radius: 5px;
+}
+
+#user-card #user-card-body .title h1 {
+    padding: 10px;
+    font-size: 24px;
+    color: rgb(0, 105, 70);
+}
+
+#parent-info .row .form-group {
+    margin-bottom: -5px;
+}
+
+#parent-info .form-label {
+    font-size: 15px;
+}
+
+#info {
+    margin-top: -15px;
+}
+
+#info .form-label {
+    font-size: 15px;
+}
+
+#username {
+    color: rgb(0, 0, 0);
+}
+
+#users-img {
+    margin-left: 5px;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+#userpp {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    object-fit: cover;
+}
+
+#users-profile {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#users-info {
+    margin-left: 10px;
+}
